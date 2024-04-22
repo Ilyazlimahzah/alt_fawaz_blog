@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const PostModel = require('../db/models/Post')
+const PostModel = require('../db/models/Blog')
 const config = require('./../config/config')
 
 const verifyBlogOwner = async (req, res, next) => {
@@ -15,6 +15,7 @@ if(req.user.id !== post.author_id.id){
   next()
 }
 };
+
 
 const tokenVerification = async (req, res, next) => {
   // Extract the token from the Authorization header
